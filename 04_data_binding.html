@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+            <h1>Data Binding</h1>
+            <a v-bind:href="website">The ninja net</a>
+            <input type="text" v-bind:value="job"><br>
+            <p v-html="websiteTag">Ninja tag</p>
+
+    </div>
+    
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: { 
+            name: 'Shaun',
+            job: 'ninja',
+            website: 'https://www.yahoo.com',
+            websiteTag: '<a href="https://www.microsoft.com">Ninja Tag</a>'
+        }, 
+        methods: {
+            greet: function(time){
+                return 'Good ' + time + ' ' + this.name;
+            }
+        }     
+    });
+</script>
+</html>
