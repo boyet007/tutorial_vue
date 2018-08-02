@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<style>
+        body{
+            font-style:Times;
+            background-color:forestgreen;
+            color:white;
+        }
+
+        #canvas{
+            width: 600px;
+            padding: 200px 20px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+    </style>
+
+<body>
+    <div id="app">
+        <h1>Events</h1>
+        <p>My Age is {{ age }}</p>
+        <!-- <button v-on:click="age++">Add a year</button>
+        <button v-on:click="age--">Subtract a Year</button> -->
+      
+        <!-- <button v-on:click="add">Add a year</button>
+        <button v-on:click="substract">Subtract a Year</button> -->
+
+        <button v-on:click.once="add(1)">Add a year</button>
+        <button v-on:click="substract(1)">Subtract a Year</button>
+
+        <button v-on:dblclick="add(10)">Add 10 year</button>
+        <button v-on:dblclick="substract(10)">Subtract 10 Year</button>
+
+        <p>My age is {{ age }}</p>
+
+        <div v-on:mousemove="updateXY" id="canvas">{{ x }}, {{ y }}</div>
+        <a v-on:click="click" href="http://www.thenetninja.co.uk">The net ninja</a>
+    </div>
+    
+    <!-- penjelasanya disini :  -->
+    <!-- https://vuejs.org/v2/guide/events.html -->
+
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: { 
+            age: 40,
+            x: 0,
+            y: 0
+
+        }, 
+        methods: {
+           add:function(inc) {
+               this.age+=inc;
+           },
+           substract: function(dec) {
+               this.age-=dec;
+           },
+           updateXY: function(event) {
+            //    console.log(event);
+            this.x = event.offsetX;
+            this.y = event.offsetY;
+           },
+           click: function() {
+               alert('You clicked me');
+           }
+        }     
+    });
+</script>
+
+
+
+</html>

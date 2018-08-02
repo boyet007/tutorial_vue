@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<style>
+        body{
+            font-style:Times;
+            background-color:forestgreen;
+            color:white;
+        }
+
+        #canvas{
+            width: 600px;
+            padding: 200px 20px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+    </style>
+
+<body>
+    <div id="app">
+        <h1>Keybaord events</h1>
+        <label for="">Name</label>
+        <input type="text" v-model="name" name="" id="">
+        <span>{{ name }}</span>
+        <label for="">Age</label>
+        <input type="text" name="" id="" v-model="age">
+        {{ age }}
+    </div>
+    
+    <!-- penjelasanya disini :  -->
+    <!-- https://www.w3schools.com/jsref/dom_obj_event.asp -->
+
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: { 
+           name: '',
+           age: ''
+
+        }, 
+        methods: {
+           logName: function() {
+            //    console.log('you entered your name');
+                
+           },
+           logAge: function() {
+               console.log('you entered your age');
+           }
+        }     
+    });
+</script>
+</html>

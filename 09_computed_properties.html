@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<style>
+        body{
+            font-style:Times;
+            background-color:forestgreen;
+            color:white;
+        }
+
+        #canvas{
+            width: 600px;
+            padding: 200px 20px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+    </style>
+
+<body>
+    <div id="app">
+        <h1>Computed Properties</h1>
+         <button v-on:click="a++">Add to A</button>
+         <button v-on:click="b++">Add to B</button>
+         <p>A - {{ a }}</p>
+         <p>B - {{ b }}</p>
+         <p>Age + A = {{ addToA }}</p>
+         <p>Age + B = {{ addToB }}</p>
+    </div>
+    
+    <!-- penjelasanya disini :  -->
+    <!-- https://www.w3schools.com/jsref/dom_obj_event.asp -->
+
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: { 
+           age: 20,
+           a: 0,
+           b: 0
+        }, 
+        methods: {
+        //  addToA: function() {
+        //      console.log('addToA');
+        //      return this.a + this.age;
+        //     },
+        //  addToB: function() {
+        //     console.log('addToB');
+        //      return this.b + this.age;
+        //     }
+
+        // kalo pakai method console kecatat 2 functon sekali klik
+        },
+        computed: {
+         addToA: function() {
+             console.log('addToA');
+             return this.a + this.age;
+            },
+         addToB: function() {
+            console.log('addToB');
+             return this.b + this.age;
+            }
+        }
+             
+    });
+</script>
+</html>
