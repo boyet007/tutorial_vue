@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app-one">
+       <h2>{{ title }}</h2>
+       <p>{{ greet }}</p>
+    </div>
+
+    <div id="app-two">
+       <h2>{{ title }}</h2>
+       <p>{{ greet }}</p>
+       <button v-on:click="changeTitle">Change App one title</button>
+        </div>
+
+</body>
+<script>
+  var one = new Vue({
+        el: '#app-one',
+        data: {
+            title: 'Vue App One'
+         
+        },
+        methods: {
+        
+        },
+
+        computed: {
+            greet: function() {
+                return 'Hello from app one';
+            }
+        }
+    });
+
+    var two = new Vue({
+        el: '#app-two',
+        data: {
+         title: 'Vue App Two'
+        },
+        methods: {
+            changeTitle: function() {
+               one.title = "Title changed"
+           }
+        }, 
+        computed: {
+            greet: function() {
+                return 'you dudes app 2 yeah';
+            }
+        }
+    });
+
+    two.title = "changed from outside";
+</script>
+</html>

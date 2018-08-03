@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app-one">
+        <h2>Vue-app-one</h2>
+        <greeting></greeting>
+    </div>
+
+    <div id="app-two">
+        <h2>Vue App Two</h2>
+        <greeting></greeting>
+    </div>
+</body>
+<script>
+
+    var data = {
+        name: 'Yoshi'
+    }
+
+    Vue.component('greeting', {
+        template: '<p>Hey there, I am {{ name }}. <button v-on:click="changeName">Change name</button></p>',
+        data: function(){
+            //return {
+                 //name: 'Yoshi' -> ketika button dipencet hanya element yang bersangkutan yang berubah
+            //}
+
+            return data; //salah satu button dipencet maka 2 element langsung update
+        },
+        methods: {
+            changeName: function() {
+                this.name = 'Mario';
+            }
+        }
+    });
+
+  var one = new Vue({
+        el: '#app-one',
+        
+        });
+
+    var two = new Vue({
+        el: '#app-two',
+    
+    });
+
+    two.title = "changed from outside";
+</script>
+</html>
