@@ -1,22 +1,30 @@
 <template>
   <div>
-<show-blogs></show-blogs>
-<list-blogs></list-blogs>
+<!-- <show-blogs></show-blogs>
+<list-blogs></list-blogs> -->
+
+<!-- kalau pakai route harus deklaariskan router view di app vue -->
+  <router-view></router-view>
   </div>
 </template>
 
 <script>
-import addBlog from './components/addBlog.vue';
-import showBlogs from './components/showBlogs.vue';
-import listBlogs from './components/listBlog.vue';
 
-export default {
-  components: {
-    'add-blog': addBlog,
-    'show-blogs': showBlogs,
-    'list-blogs': listBlogs
-  }
-}
+//pakai router hilangkan komponen aja
+
+// import addBlog from './components/addBlog.vue';
+// import showBlogs from './components/showBlogs.vue';
+// import listBlogs from './components/listBlog.vue';
+
+
+
+// export default {
+//   components: {
+//     'add-blog': addBlog,
+//     'show-blogs': showBlogs,
+//     'list-blogs': listBlogs
+//   }
+// }
 </script>
 
 <style>
