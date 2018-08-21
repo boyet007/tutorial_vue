@@ -35,6 +35,21 @@ export default {
                 return blog.title.match(this.search);
             });
         }
+    },
+    //filter lokal saja
+    filters: {
+        'to-uppercase': function(value) {
+            return value.toUpperCase();
+        }
+    },
+
+    //local directives
+    directives: {
+        'rainbow': {
+            bind(el, binding, vnode) {
+                 el.style.color = "#" + Math.random().toString().slice(2,8);
+            }
+        }
     }
 }
 </script>
