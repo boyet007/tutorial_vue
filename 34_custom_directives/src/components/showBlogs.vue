@@ -11,7 +11,7 @@
 </template>
 
 <script>
-
+import searchMixin from '../mixins/searchMixin';
 export default {
     data() {
         return {
@@ -30,11 +30,8 @@ export default {
         });        
     },
     computed: {
-        filteredBlogs: function() {
-            return this.blogs.filter((blog) => {
-                return blog.title.match(this.search);
-            });
-        }
+     
+        
     },
     //filter lokal saja
     filters: {
@@ -50,7 +47,8 @@ export default {
                  el.style.color = "#" + Math.random().toString().slice(2,8);
             }
         }
-    }
+    },
+    mixins: [searchMixin]
 }
 </script>
 
